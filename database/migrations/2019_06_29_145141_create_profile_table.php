@@ -23,6 +23,8 @@ class CreateProfileTable extends Migration
             $table->text('social_media');
             $table->text('github');
             $table->string('username', 64);        
+            $table->string('gender', 1);     
+            $table->date('birth');
         });
 
 
