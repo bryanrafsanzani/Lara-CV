@@ -14,9 +14,14 @@ class CreatePersonalSkillTable extends Migration
     public function up()
     {
         Schema::create('personal_skill', function (Blueprint $table) {
-            $table->bigIncrements('prs_id');
+            $table->increments('id');
             $table->string('prs_name', 64);
             $table->tinyInteger('prs_rate')->nullable();
+            $table->unsignedInteger('login_id')->index();
+
+            $table->foreign('login_id')
+            ->references('id')->on('login')
+            ->onDelete('cascade');
         });
 
     }

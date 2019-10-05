@@ -14,14 +14,20 @@ class CreateExperienceTable extends Migration
     public function up()
     {
         Schema::create('experience', function (Blueprint $table) {
-            $table->bigIncrements('exp_id');
+            $table->increments('id');
             $table->string('exp_name', 64);
             $table->text('exp_title');
             $table->text('exp_description');
             $table->text('exp_image');
             $table->date('exp_start');
             $table->date('exp_end');
+            $table->unsignedInteger('login_id')->index();
+            
+            $table->foreign('login_id')
+            ->references('id')->on('login')
+            ->onDelete('cascade');
         });
+
 
     }
 

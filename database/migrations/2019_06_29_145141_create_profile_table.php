@@ -14,7 +14,7 @@ class CreateProfileTable extends Migration
     public function up()
     {
         Schema::create('profile', function (Blueprint $table) {
-            $table->bigIncrements('profile_id');
+            $table->increments('id');
             $table->string('name', 64);
             $table->text('picture');
             $table->text('address');
@@ -23,15 +23,14 @@ class CreateProfileTable extends Migration
             $table->text('about_me');
             $table->text('social_media');
             $table->text('github');
-            $table->string('username', 64);        
             $table->string('gender', 1);     
             $table->date('birth');
-        });
-
-
-        Schema::table('profile', function($table){
-            $table->foreign('username')->references('username')->on('login')->onUpdate('cascade')->onDelete('cascade');
-        });
+            $table->unsignedInteger('login_id')->index();
+   
+            $table->foreign('login_id')
+            ->references('id')->on('login')
+            ->onDelete('cascade');
+        });        
 
     }
 

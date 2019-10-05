@@ -14,9 +14,14 @@ class CreateHobbyTable extends Migration
     public function up()
     {
         Schema::create('hobby', function (Blueprint $table) {
-            $table->bigIncrements('hby_id');
+            $table->increments('id');
             $table->string('hby_name', 64);
             $table->text('hby_image');
+            $table->unsignedInteger('login_id')->index();
+
+            $table->foreign('login_id')
+            ->references('id')->on('login')
+            ->onDelete('cascade');
         });
 
     }

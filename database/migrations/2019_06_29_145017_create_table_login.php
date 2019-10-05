@@ -14,8 +14,10 @@ class CreateTableLogin extends Migration
     public function up()
     {
         Schema::create('login', function (Blueprint $table) {
-            $table->string('username', 64)->primary();
+            $table->increments('id');
+            $table->string('username', 64)->unique();
             $table->text('password');
+            $table->timestamp('email_verified_at');
         });
     }
 
