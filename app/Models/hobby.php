@@ -8,13 +8,14 @@ class hobby extends Model
 {
     protected $table = "hobby";
     public $timestamps = false;
-    protected $primaryKey = "hby_id";
+    protected $primaryKey = "id";
 
 
     protected $fillable = [
-        'hby_id', 
+        'id', 
         'hby_name',
         'hby_image', 
+        'login_id',
         ];   
 
 }

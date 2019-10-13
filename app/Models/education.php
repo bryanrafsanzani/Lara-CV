@@ -8,15 +8,16 @@ class education extends Model
 {
     protected $table = "education";
     public $timestamps = false;
-    protected $primaryKey = "edu_id";
+    protected $primaryKey = "id";
 
 
     protected $fillable = [
-        'edu_id', 
+        'id', 
         'edu_name',
         'edu_title', 
         'edu_description', 
         'edu_start', 
         'edu_end',
+        'login_id',
         ];
 }

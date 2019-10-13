@@ -8,16 +8,17 @@ class experience extends Model
 {
     protected $table = "experience";
     public $timestamps = false;
-    protected $primaryKey = "exp_id";
+    protected $primaryKey = "id";
 
 
     protected $fillable = [
-        'exp_id', 
+        'id', 
         'exp_name',
         'exp_title', 
         'exp_description', 
         'exp_image', 
         'exp_start',
         'exp_end',
+        'login_id',
         ];   
 }

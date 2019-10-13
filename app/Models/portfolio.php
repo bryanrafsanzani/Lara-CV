@@ -8,17 +8,17 @@ class portfolio extends Model
 {
     protected $table = "portfolio";
     public $timestamps = false;
-    protected $primaryKey = "prt_id";
+    protected $primaryKey = "id";
 
 
     protected $fillable = [
-        'prt_id', 
+        'id', 
         'prt_name',
         'prt_title', 
         'prt_description', 
         'prt_image', 
         'prt_start',
-        'prt_end',
+        'login_id',
         ];   
         
 }

@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class personal_skill extends Model
+class active extends Model
 {
-    protected $table = "personal_skill";
+    protected $table = "active";
     public $timestamps = false;
     protected $primaryKey = "id";
-    
 
 
     protected $fillable = [
         'id', 
         'prs_name',
-        'prs_rate', 
-        'login_id',
-        ];           
+        'login_id' ,
+        ];  
+        
+   
+
 }
